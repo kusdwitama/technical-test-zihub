@@ -1,7 +1,7 @@
 <template bg-color>
   <div class="bg-main min-h-screen">
     <Navbar/>
-    <!-- <Sidebar/> -->
+    <Sidebar/>
     <Usecaseone/>
   </div>
 </template>
