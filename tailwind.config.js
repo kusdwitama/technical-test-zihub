@@ -17,6 +17,7 @@ export default {
         'table-top': '#16192a',
         'table-bot': '#1c2134',
         'judul': '#8188b4',
+        'main-text': '#ffffff',
       },
     },
   },
