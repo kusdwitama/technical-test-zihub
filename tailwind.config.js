@@ -7,9 +7,6 @@ export default {
   ],
   theme: {
     extend: {
-      width: {
-        'navbar': '1510px',
-      },
       colors: {
         'custom-dark': '#16192a',
         'bg-color': '#3e404d',
