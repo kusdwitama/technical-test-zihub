@@ -5,25 +5,22 @@
         <thead class="sticky top-0 bg-custom-dark">
         <tr>
             <th class="px-6 py-3" colspan="8">
-              <div class="flex items-center justify-between">
+              <div class="flex items-center justify-left gap-9">
                 <h1 class="text-lg font-bold">Use Case 1</h1>
-                <div class="flex items-center gap-4">
-                  <button class="text-sky-500 hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50 rounded-md px-2 py-1">Dashboard</button>
-                  <button class="text-sky-500 hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50 rounded-md px-2 py-1">Encounter</button>
-                  <button class="text-sky-500 hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50 rounded-md px-2 py-1">Condition</button>
-                </div>
+                  <button class="border border-white rounded-lg">Dashboard</button>
+                  <button class="">Encounter</button>
+                  <button class="">Condition</button>
               </div>
             </th>
           </tr>
           <tr>
-            <th class="px-6 py-3">FROM DATE</th>
-            <th class="px-6 py-3">TO DATE</th>
-            <th class="px-6 py-3">STATUS</th>
-            <th class="px-6 py-3">SO/NIK/ADMISSION ID</th>
-            <th class="px-6 py-3">PATIENT NIK</th>
-            <th class="px-6 py-3">PATIENT SID</th>
-            <th class="px-6 py-3">PRACTIT</th>
-            <th class="px-6 py-3"></th>
+            <th class="px-6 py-3">From Date</th>
+            <th class="px-6 py-3">To date</th>
+            <th class="px-6 py-3">status</th>
+            <th class="px-6 py-3">sid / nik / admissionId</th>
+            <th class="px-6 py-3">search</th>
+            <th class="px-6 py-3">download</th>
+            <th class="px-6 py-3">exel</th>
           </tr>
           <tr>
             <th class="px-6 py-3">NO</th>
@@ -81,15 +78,17 @@ export default {
 <style scoped>
 .bg-custom-dark {
   background-color: #1a202c;
+  padding-right: 8px; 
+  border-radius: 10px;
+  overflow-y: auto;
 }
 
-/* Gaya scrollbar custom */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -101,3 +100,4 @@ export default {
   background: #555;
 }
 </style>
+
