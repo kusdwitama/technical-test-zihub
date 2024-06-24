@@ -1,5 +1,5 @@
 <template bg-color>
-  <div class="bg-background-utama min-h-screen">
+  <div class="bg-background-utama dark:bg-gray-600 min-h-screen">
     <Navbar/>
     <Sidebar/>
     <router-view/>
