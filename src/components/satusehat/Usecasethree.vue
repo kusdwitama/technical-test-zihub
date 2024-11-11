@@ -42,9 +42,9 @@
         <font-awesome-icon icon="fa-solid fa-plus" class="text-white"/> Add Data
       </button>
     </div>
-    <div class="overflow-x-auto px-4">
+    <div class="overflow-y-auto h-[73%] px-4">
       <table class="min-w-full text-xs font-medium uppercase text-blue-300 bg-table-bot mt-4">
-        <thead>
+        <thead class="bg-custom-dark sticky top-0 z-0">
           <tr class="text-left">
             <th class="px-6 py-3">NO</th>
             <th class="px-6 py-3">STATUS SATUSEHAT</th>
