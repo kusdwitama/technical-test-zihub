@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed bg-custom-dark top-[13%] left-[16%] h-[85%] right-4 rounded-2xl border border-warna-border">
+  <div class="fixed bg-custom-dark top-[13%] left-[16%] h-[85%] right-4 rounded-2xl border border-warna-border overflow-y-auto">
     <div class="relative uppercase text-white px-5 py-3 flex items-center">
       <h1 class="text-2xl font-bold mr-4">Use case 1</h1>
       <div class="border-r border-white h-8 mr-4"></div>
@@ -42,7 +42,7 @@
         <font-awesome-icon icon="fa-solid fa-plus" class="text-white"/> Add Data
       </button>
     </div>
-    <div class="overflow-y-auto h-[73%] px-4"> <!-- Set a height to the scrollable area -->
+    <div class="overflow-y-auto h-[73%] px-4">
       <table class="min-w-full text-xs font-medium uppercase text-blue-300 bg-table-bot mt-4">
         <thead class="bg-custom-dark sticky top-0 z-0">
           <tr class="text-left">
@@ -73,37 +73,38 @@
       </table>
     </div>
     <div v-if="isModalOpen" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center top-[10%]">
-      <div class="bg-table-bot rounded-lg p-6 w-[50%]">
-        <h2 class="text-lg font-bold mb-4 text-white">Tambah Data Baru</h2>
-        <form @submit.prevent="addNewItem">
-          <label class="uppercase text-warna-huruf font-bold">Status</label>
-          <select v-model="newItem.status" class="border border-warna-border rounded-lg px-3 py-2 mb-4 w-full text-warna-huruf focus:bg-custom-dark bg-table-top">
-            <option disabled value="">Status</option>
-            <option value="SUCCESS">Success</option>
-            <option value="FAILED">Failed</option>
-            <option value="DRAFT">Draft</option>
-          </select>
-          <label class="uppercase text-warna-huruf font-bold">Id Satusehat</label>
-          <input type="text" v-model="newItem.id" placeholder="Masukkan ID Satusehat" class="text-warna-huruf border border-warna-border rounded-lg px-3 py-2 mb-2 w-full bg-table-top">
-          <label class="uppercase text-warna-huruf font-bold">Admission Id</label>
-          <input type="text" v-model="newItem.admissionId" placeholder="Masukkan Admission ID" class="border border-warna-border rounded-lg px-3 py-2 mb-2 w-full bg-table-top">
-          <label class="uppercase text-warna-huruf font-bold">Patient NIK</label>
-          <input type="text" v-model="newItem.patientNik" placeholder="Masukkan Patient NIK" class="border border-warna-border rounded-lg px-3 py-2 mb-2 w-[81%] flex-grow mr-4 bg-table-top">
-          <button class="bg-blue-500 hover:bg-blur-600 text-white px-4 py-2 rounded-md mt-1 h-10">
-            <font-awesome-icon icon="fa-solid fa-search" />
-            <span class="ml-2">Cari Data</span>
-          </button>
-          <label class="uppercase text-warna-huruf font-bold">Patient SID</label>
-          <input type="text" v-model="newItem.patientSid" placeholder="Masukkan Patient SID" class="border border-warna-border rounded-lg px-3 py-2 mb-2 w-full bg-table-top">
-          <label class="uppercase text-warna-huruf font-bold">Practitioner</label>
-          <input type="text" v-model="newItem.practitioner" placeholder="Masukkan Practitioner" class="border border-warna-border rounded-lg px-3 py-2 mb-2 w-full bg-table-top">
-          <div class="flex justify-end">
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Tambah</button>
-            <button @click="closeModal" class="bg-red-500 text-white px-4 py-2 ml-2 rounded-lg hover:bg-red-600">Tutup</button>
-          </div>
-        </form>
+  <div class="bg-table-bot rounded-lg p-6 w-[50%]">
+    <h2 class="text-lg font-bold mb-4 text-white">Tambah Data Baru</h2>
+    <form @submit.prevent="addNewItem">
+        <label class="uppercase text-warna-huruf font-bold">Status</label>
+      <select v-model="newItem.status" class="border border-warna-border rounded-lg px-3 py-2 mb-4 w-full text-warna-huruf focus:bg-custom-dark bg-table-top">
+        <option disabled value="">Status</option>
+        <option value="SUCCESS">Success</option>
+        <option value="FAILED">Failed</option>
+        <option value="DRAFT">Draft</option>
+      </select>
+        <label class="uppercase text-warna-huruf font-bold">Id Satusehat</label>
+      <input type="text" v-model="newItem.id" placeholder="Masukkan ID Satusehat" class="text-warna-huruf border border-warna-border rounded-lg px-3 py-2 mb-2 w-full bg-table-top">
+        <label class="uppercase text-warna-huruf font-bold">Admission Id</label>
+      <input type="text" v-model="newItem.admissionId" placeholder="Masukkan Admission ID" class="border border-warna-border rounded-lg px-3 py-2 mb-2 w-full bg-table-top">
+        <label class="uppercase text-warna-huruf font-bold">Patient NIK</label> <br>
+      <input type="text" v-model="newItem.patientNik" placeholder="Masukkan Patient NIK" class="border border-warna-border rounded-lg px-3 py-2 mb-2 w-[81%] flex-grow mr-4 bg-table-top">
+      <button class="bg-blue-500 hover:bg-blur-600 text-white px-4 py-2 rounded-md mt-1 h-10">
+        <font-awesome-icon icon="fa-solid fa-search" />
+        <span class="ml-2">Cari Data</span>
+      </button>
+        <label class="uppercase text-warna-huruf font-bold">Patient SID</label>
+      <input type="text" v-model="newItem.patientSid" placeholder="Masukkan Patient SID" class="border border-warna-border rounded-lg px-3 py-2 mb-2 w-full bg-table-top">
+        <label class="uppercase text-warna-huruf font-bold">Practitioner</label>
+      <input type="text" v-model="newItem.practitioner" placeholder="Masukkan Practitioner" class="border border-warna-border rounded-lg px-3 py-2 mb-2 w-full bg-table-top">
+      <div class="flex justify-end">
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Tambah</button>
+        <button @click="closeModal" class="bg-red-500 text-white px-4 py-2 rounded-lg ml-2 hover:bg-red-600">Batal</button>
       </div>
-    </div>
+    </form>
+  </div>
+</div>
+
   </div>
 </template>
 
